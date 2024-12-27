@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-from queries import save_weather_data
+from queries import save_data
 
 
 def normalizer(data):
@@ -18,8 +18,8 @@ def get_weather_data(city):
     response = requests.get(url)
     data = response.json()
     data = normalizer(data)
-    save_weather_data(data)
-    print(data)
+    save_data(data)
+    # print(data)
 
 
 get_weather_data(city=input("Enter a city name : "))
